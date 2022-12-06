@@ -1,19 +1,17 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# React Router Tutorial Exercise
+## Project #49 from Codecademy's Full Stack Engineer Career Path
+### By Anton Vlasenko (AntonV0)  
+## Project Outline
+This project introduced me to routing - using the current browser URL to determine what content to show a user. React Router v5 was installed, as v6 introduced changes that break the starter code.
+## What I Learned
+  - Installing react-router-dom from the terminal
+  - Enabling routing by wrapping contents in the BrowserRouter component
+  - Adding routes with the Route component
+  - Static routes (without URL parameters, e.g. /users)
+  - Dynamic routes (with URL parameters, e.g. /users/:userId)
+  - Using the useParams hook to access the values of URL parameters
+  - Declaratively redirecting users by rendering the Redirect component
+  - Imperatively redirecting users by accessing the history object via the useHistory hook and calling its methods (goForward, goBack, push)
+  - Accessing the value of query parameters using the useLocation hook
+***
+*Please note that in each project, the first commit is always the starter code provided by Codecademy.*

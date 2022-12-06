@@ -1,22 +1,26 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, useRouteMatch, Redirect } from "react-router-dom";
 import { selectCurrentUser, selectIsLoggedIn } from "../features/session/sessionSlice";
 import EditProfileForm from "./EditProfileForm";
 
 export default function Profile () {
-  const currentUser = useSelector(selectCurrentUser)
+  const currentUser = useSelector(selectCurrentUser);
   const loggedIn = useSelector(selectIsLoggedIn);
 
-  // call useRouteMatch() to get the url and path
-  
-  // use loggedIn to return a Redirect
-  
+  const {url, path} = useRouteMatch();
+
+  if (!loggedIn) {
+    return <Redirect to="/sign-up"/>
+  }
+
   return (
     <main>
       <h1>{currentUser.username}</h1>
-      <Link to={"/profile/edit"}>Edit</Link>
-      {/* Render a route for EditProfileForm */}
+      <Link to={url+"/edit"}>Edit</Link> {/*Can also use template literals: <Link to=`${url}/edit`>*/}
+      <Route path={path+"/edit"}>
+        <EditProfileForm />
+      </Route>
     </main>
   )
 }
